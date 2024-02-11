@@ -2,12 +2,19 @@ package zlomek.model;
 
 import zlomek.util.ZlomekUtil;
 
-public class Zlomek {
+//TODO cv2:
+/*
+zlomek udělat imutable (neměnný), odstranit settry
+vyjímka při zadání nulového jmenovatele (try-catch, throw)
+rozhraní, které bude definovat základní operace pro práci se zlomky (sčítání, odčítání, násobení, dělení)
+metoda vracející desetinné vyjádření zlomku
+* */
+public class Zlomek{
     private int citatel;
 
     private int jmenovatel;
 
-    public Zlomek(int citatel, int jmenovatel) {
+    public Zlomek(int citatel, int jmenovatel){
         int delitel = ZlomekUtil.zjistiNejvetsihoSpolecnehoDelitele(citatel, jmenovatel);
 
         this.citatel = citatel / delitel;
@@ -17,7 +24,6 @@ public class Zlomek {
     public int getCitatel() {
         return citatel;
     }
-
 
     public int getJmenovatel() {
         return jmenovatel;
@@ -30,4 +36,5 @@ public class Zlomek {
     public void setJmenovatel(int jmenovatel) {
         this.jmenovatel = jmenovatel;
     }
+
 }
