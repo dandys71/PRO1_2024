@@ -10,17 +10,22 @@ public class ZlomekApp {
     private static final Scanner input = new Scanner(System.in);
     public static void main(String[] args)  {
 
-        Zlomek z2 = new Zlomek(10, 5);
+        Zlomek z1 = new Zlomek(3, 9); //zkrácený tvar: 1 / 3
+
+        Zlomek z2 = new Zlomek(10, 5); //zkrácený tvar: 2 / 1
+
+        // Zkouška námi implementovaných operací z IZlomek
+        IZlomek vynasob = z1.vynasob(z2); //2 / 3
+        System.out.println("Výsledek nasobeni je: " + vynasob);
+        IZlomek vydel = z1.vydel(z2); //1 / 6
+        System.out.println("Výsledek dělení je: " + vydel);
+        IZlomek secti = z1.secti(z2); //7 / 3
+        System.out.println("Výsledek sčítání je: " +  secti);
+        IZlomek odecti = z1.odecti(z2); //-5 / 3
+        System.out.println("Výsledek dodčítání je: " + odecti);
 
 
-        Zlomek z1 = new Zlomek(3, 9);
-
-
-        IZlomek vysledek = z1.vynasob(z2);
-
-        System.out.println(vysledek);
-
-/*
+        //načtení zlomku od uživatele včetně ošetření výskytu všech možných výjimek
         try {
             System.out.println("Zadej čitetel: ");
             int citatel = input.nextInt();
@@ -28,17 +33,23 @@ public class ZlomekApp {
             int jmenovatel = input.nextInt();
 
             Zlomek z = new Zlomek(citatel, jmenovatel);
-            System.out.println("Dostal jsem se až sem");
+            //pokud při zadávání čísla nebo při zadání nulového jmenovatele, se kód dále nedostane a zpráva níže s novým zlomkem nebude vypsána
+            System.out.println("Vámi vytvořený zlomek: " + z);
         }catch (ArithmeticException ae){
             System.out.println(ae.getMessage());
             ae.printStackTrace();
         }catch (InputMismatchException ie){
             System.out.println("Nezdal jsi správný formát");
-        }finally {
-            System.out.println("Děkuji za vytvoření zlomku15");
+            ie.printStackTrace();
+        }catch (Exception e){ //to, co neodchytí dva předchozí catche, odchytí tento obecný
+            System.out.println("Vyskatla se jiná neznáma chyba");
+            e.printStackTrace();
+        } finally {
+            System.out.println("Děkuji za vytvoření zlomku");
         }
 
-        System.out.println("Kod stále běží");*/
+        //zkouška, že po odchycení výjimku bude tato hláška vypsána
+        System.out.println("Kod stále běží");
 
     }
 }

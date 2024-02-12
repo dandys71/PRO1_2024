@@ -5,11 +5,12 @@ public interface IZlomek {
 
     IZlomek vydel(IZlomek z);
 
+    IZlomek secti(IZlomek z);
+
+    IZlomek odecti(IZlomek z);
+
     int getCitatel();
 
     int getJmenovatel();
-
-    //vytvořte metody na deleni, scitani a odcitani zlomku
-
 
 }

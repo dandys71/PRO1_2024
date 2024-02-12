@@ -2,13 +2,6 @@ package zlomek.model;
 
 import zlomek.util.ZlomekUtil;
 
-//TODO cv2:
-/*
-zlomek udělat imutable (neměnný), odstranit settry
-vyjímka při zadání nulového jmenovatele (try-catch, throw)
-rozhraní, které bude definovat základní operace pro práci se zlomky (sčítání, odčítání, násobení, dělení)
-metoda vracející desetinné vyjádření zlomku
-* */
 public class Zlomek implements IZlomek{
     private final int citatel;
 
@@ -47,8 +40,24 @@ public class Zlomek implements IZlomek{
 
     @Override
     public IZlomek vydel(IZlomek z) {
-        int novyCitatel = //todo;
-        int novyJmenovatel = //todo;
+        int novyCitatel = getCitatel() * z.getJmenovatel();
+        int novyJmenovatel = getJmenovatel() * z.getCitatel();
+
+        return new Zlomek(novyCitatel, novyJmenovatel);
+    }
+
+    @Override
+    public IZlomek secti(IZlomek z) {
+        int novyCitatel = (getCitatel() * z.getJmenovatel()) + (z.getCitatel() * getJmenovatel());
+        int novyJmenovatel = getJmenovatel() * z.getJmenovatel();
+
+        return new Zlomek(novyCitatel, novyJmenovatel);
+    }
+
+    @Override
+    public IZlomek odecti(IZlomek z) {
+        int novyCitatel = (getCitatel() * z.getJmenovatel()) - (z.getCitatel() * getJmenovatel());
+        int novyJmenovatel = getJmenovatel() * z.getJmenovatel();
 
         return new Zlomek(novyCitatel, novyJmenovatel);
     }
