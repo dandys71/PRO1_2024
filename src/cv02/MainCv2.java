@@ -73,7 +73,7 @@ public class MainCv2 {
         * */
         IZvire iPes = new Pes();
         IZvire iKocka = new Kocka();
-        iPes.udelejZvuk();;
+        iPes.udelejZvuk();
         iKocka.udelejZvuk();
 
        // iKocka.odpocivej(); //není možné zavolat, iKocka je typu IZvire a tento interface metodu odpocivej nemá...
