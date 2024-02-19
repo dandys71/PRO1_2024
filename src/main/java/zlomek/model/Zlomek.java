@@ -7,6 +7,7 @@ public class Zlomek implements IZlomek{
 
     private final int jmenovatel;
 
+    //cv3: todo zajisti, aby jmenovatel nebyl záporný a aby do metody pro zjištění nejvěšího společného dělitele vstupovaly pouze kladné parametry
     public Zlomek(int citatel, int jmenovatel)throws ArithmeticException{
         if(jmenovatel == 0){
             throw new ArithmeticException("Jmenovatel nemůže být nulový");
