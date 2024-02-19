@@ -88,6 +88,10 @@ public class ZlomekApp {
             pomocnyZlomek = pomocnyZlomek.secti(zlomky.get(i));
         }
 
+        //je možná i varianta, že pomocnyZlomek bude dat. typu Zlomek
+        //při nahrávání hodnoty do zlomku, však musím výsledek scitani (což je nový objekt datového typu IZlomek) přetypovat na zlomek
+        //pomocnyZlomek = (Zlomek) pomocnyZlomek.secti(zlomky.get(i));
+
         System.out.println("Součet je: " + pomocnyZlomek);
 
         //dalším typem kolekce je tzv. spojový seznam (LinkedList), kdy si každý
