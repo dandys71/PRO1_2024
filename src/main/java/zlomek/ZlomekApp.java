@@ -3,6 +3,7 @@ package zlomek;
 import zlomek.model.IZlomek;
 import zlomek.model.Zlomek;
 
+import java.io.ObjectOutputStream;
 import java.util.*;
 
 
@@ -53,7 +54,7 @@ public class ZlomekApp {
         //zkouška, že po odchycení výjimku bude tato hláška vypsána
         System.out.println("Kod stále běží");
 */
-
+/*
         //Cvičení 3
         //Kolekce, která je vnitřně derinovaná polem (datového typu, který předáme v <>)
         //araylist je pružnější než samotné pole, které má předem danou velikost a nelze měnit
@@ -109,5 +110,15 @@ public class ZlomekApp {
         //ale musí se projít všechny uzly, které před uzlem s daným indexem jsou
         //linkedlist je tedy kolekce, která je více vhodná pro množiny, které budeme chtít vždy procházat celé
         Zlomek z = zlomkyLinked.get(2);
+        */
+
+        //metoda může vyhodit výjimku NumberFormatException, proto je vhodné ji obalit try-catchem
+        try {
+            Zlomek z = Zlomek.parse(input.nextLine());
+            System.out.println(z);
+        }catch (NumberFormatException ex){
+            ex.printStackTrace();
+            System.out.println(ex.getMessage());
+        }
     }
 }
