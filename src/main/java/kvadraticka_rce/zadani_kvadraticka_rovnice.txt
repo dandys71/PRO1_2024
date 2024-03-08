@@ -1,0 +1,18 @@
+1) Vytvořte třídu pro kvadratickou rovnici (přepokládejme, že bude zadána vždy v obecném tvaru ax^2 + bx + c = 0), tato třída bude mít atributy a, b, c
+2) a,b,c jsou reálná čísla
+3) Atribut a musí být různý od nuly
+4) Vytvořte interface pro kvadratickou rovnici, který bude mít metody vypoctiDiskriminant, vypoctiKoreny (určete správné datové typy)
+5) Nechte třídu pro kvadratickou rovnici implementovat tento interface
+6) vzorce pro výpočet diskriminantu a kořenů rovnice si případně najděte na internetu (mocina-> Math.pow(zaklad - double, exponent - double); odmocnina -> Math.sqrt(double);
+7) U kořenů obcecně rozlišujeme tři stavy:
+D > 0 - dva různé reálné kořeny
+D = 0 - dva stejné realné kořeny
+D < 0 - nemá řešení v reálných číslech (vhodné vyhodit výjimku, nezapomenout přidat do hlavičky metody, že může vyhazovat výjimku)
+8) Vytvořte testy pro třídu kvadratické rovnice
+-test na zadání nulového atributu a
+-test na korektní výpočet diskriminantu
+-test na korektní výpočet kořenů rovnice (pokud možno všechny tři varianty pro D > 0, D = 0, D < 0)
+
+x2−11x+24=0;D=25;{3, 8};
+x2+9=0;D=-36;{v R nemá řešení}
+x2-6x+9=0;D=0;{3}
